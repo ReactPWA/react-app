@@ -1,12 +1,24 @@
 {
   "name": "a-simple-react-router-v4-tutorial",
-  "version": "1.0.0",
   "description": "https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf",
-  "keywords": [],
-  "main": "index.js",
+  "version": "0.0.1",
   "dependencies": {
-    "react-router-dom": "4.1.1",
+    "axios": "^0.18.0",
+    "react": "15.5.3",
     "react-dom": "15.5.3",
-    "react": "15.5.3"
+    "react-redux": "^5.0.7",
+    "react-responsive-carousel": "^3.1.39",
+    "react-router-dom": "4.1.1",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "set PORT=80 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

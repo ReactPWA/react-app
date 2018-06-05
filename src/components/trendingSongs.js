@@ -36,7 +36,7 @@ class Trending extends Component {
     });
     const data = this.props.data;
     const TData = Object.keys(data).map(key =>
-      <Link to={'/Songs'} data-seo={data[key].seokey} onClick={this.getIds.bind(this)}>
+      <Link key={key} to={'/Songs'} data-seo={data[key].seokey} onClick={this.getIds.bind(this)}>
         <div className="c_item list   loaded" id={"trackrow" + data[key].entity_id}>
           <span id="parent-row-song23594885" className={"none parentnode sourcelist_" + data[key].entity_id} data-id={data[key].entity_id} data-title={data[key].name}>
           </span>
