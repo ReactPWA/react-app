@@ -9,24 +9,18 @@ import PropTypes from 'prop-types';
 import { getHomeTopTrendingSongs, getUrls } from '../actions/homeActions';
 
 class Trending extends Component {
-  
+  constructor(props) {
+      super(props);
+
+      this.state = {
+          song: false
+      }
+  }
   componentDidMount() {
     //this.getTrendingData();
     this.props.getHomeTopTrendingSongs();
   }
-  getIds(event) {    
-    let id = event.target.firstChild.getAttribute("data-id");
-    let title = event.target.firstChild.getAttribute("data-title");
-    this.props.getUrls(id, title).then(url => {      
-      if (window.getMobileOperatingSystem() === "Android") {        
-        window.getSongs(title, url, id);
-      } else {
-        window.getSongsIOS(url);
-      }
-    });
 
-    
-  }
 
   render() {
     //console.log('Trending Data : ', this.props.data);
@@ -36,7 +30,7 @@ class Trending extends Component {
     });
     const data = this.props.data;
     const TData = Object.keys(data).map(key =>
-      <Link key={key} to={'/Songs'} data-seo={data[key].seokey} onClick={this.getIds.bind(this)}>
+      <Link to={'/Songs/'+data[key].seokey} data-seo={data[key].seokey}>
         <div className="c_item list   loaded" id={"trackrow" + data[key].entity_id}>
           <span id="parent-row-song23594885" className={"none parentnode sourcelist_" + data[key].entity_id} data-id={data[key].entity_id} data-title={data[key].name}>
           </span>
