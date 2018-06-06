@@ -9,12 +9,12 @@ export function setHomeTopTrendingSongs(data) {
 	};
 }
 
-export function getHomeTopTrendingSongs() {
+export function getHomeTopTrendingSongs(limit = 9) {
 	return dispatch => {
 		return axios.get('http://apiportalx.gaana.com/home/trending/songs?userlanguage=Hindi,English').then(res => {
 			return res.data.entities;
 		}).then(data => {
-			dispatch(setHomeTopTrendingSongs(data.slice(0, 9)));
+			dispatch(setHomeTopTrendingSongs(data.slice(0, limit)));
 		});
 	}
 }

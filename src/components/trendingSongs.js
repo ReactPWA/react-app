@@ -9,13 +9,7 @@ import PropTypes from 'prop-types';
 import { getHomeTopTrendingSongs, getUrls } from '../actions/homeActions';
 
 class Trending extends Component {
-  constructor(props) {
-      super(props);
-
-      this.state = {
-          song: false
-      }
-  }
+  
   componentDidMount() {
     //this.getTrendingData();
     this.props.getHomeTopTrendingSongs();
